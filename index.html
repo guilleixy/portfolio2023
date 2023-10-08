@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guillermo Bernal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stars.css">
+    <link rel="stylesheet" type="text/css" href="socials.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="blob"></div>
+    <script src="blob.js"></script>
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+    <style>
+        /* https://uiverse.io/mrhyddenn/wet-cobra-49 */
+        /* https://uiverse.io/ArturCodeCraft/big-chipmunk-22 */
+        /* https://uiverse.io/boryanakrasteva/terrible-dingo-70 */
+        .scrolldown {
+        --color: white;
+        --sizeX: 30px;
+        --sizeY: 50px;
+        position: fixed;
+        width: var(--sizeX);
+        height: var(--sizeY);
+        /* margin-left: var(sizeX / 2); */
+        border: calc(var(--sizeX) / 10) solid var(--color);
+        border-radius: 50px;
+        box-sizing: border-box;
+        /* margin-bottom: 16px; */
+        bottom: 25px;
+        right: 20px;
+        z-index: 50;
+        }
+
+        .scrolldown::before {
+        content: "";
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        margin-left: -3px;
+        background-color: var(--color);
+        border-radius: 100%;
+        animation: scrolldown-anim 2s infinite;
+        box-sizing: border-box;
+        box-shadow: 0px -5px 3px 1px #2a547066;
+        z-index: 3;
+        }
+
+
+        @keyframes scrolldown-anim {
+        0% {
+            opacity: 0;
+            height: 6px;
+        }
+
+        40% {
+            opacity: 1;
+            height: 10px;
+        }
+
+        80% {
+            transform: translate(0, 20px);
+            height: 10px;
+            opacity: 0;
+        }
+
+        100% {
+            height: 3px;
+            opacity: 0;
+        }
+        }
+
+        .chevrons {
+        padding: 6px 0 0 0;
+        margin-left: -3px;
+        margin-top: 48px;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .chevrondown {
+        margin-top: -6px;
+        position: relative;
+        border: solid var(--color);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        }
+
+        .chevrondown:nth-child(odd) {
+        animation: pulse54012 500ms ease infinite alternate;
+        }
+
+        .chevrondown:nth-child(even) {
+        animation: pulse54012 500ms ease infinite alternate 250ms;
+        }
+
+        @keyframes pulse54012 {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 0.5;
+        }
+        }
+
+        .zoomed-scrolldown{
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%) scale(300%);
+            
+        }
+
+    </style>
+    <header>
+        <div id="header-wrapper" class="fixed absolute-center all-1s hover-text-shadow">
+            <h1 data-value="Guillermo Bernal" class="all-1s">
+                Guillermo Bernal
+            </h1>
+            <script src="texteffect.js"></script>
+            <h2 class="all-1s"><span id="flechita">></span><span id="programador-web">Desarrollador Web</span><span id="barrita">_</span></h2>
+        </div>
+        <ul class="fixed flex right-0 all-0-5s" id="menu">
+            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#about-end">sobre mí</a></li>
+            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#technologies-end">tecnologías</a></li>
+            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#projects-end">proyectos</a></li>
+        </ul>
+        <div class="socials fixed flex align-center justify-center all-0-5s" id="socials">
+            <ul id="social_ul" class="social_ul">
+                  <li class="all-1s">
+                    <a class="linkedin" href="https://www.linkedin.com/in/guillermo-bernal-b0515b285/" target="_blank">
+                      <span class="ln_span box-shadow"></span>
+                      <span class="ln_span box-shadow"></span>
+                      <span class="ln_span box-shadow"></span>
+                      <span class="ln_span box-shadow"></span>
+                      <i class="fa-brands fa-linkedin text-shadow" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="all-1s">
+                    <a class="github" href="https://github.com/guilleixy" target="_blank">
+                      <span class="gh_span box-shadow"></span>
+                      <span class="gh_span box-shadow"></span>
+                      <span class="gh_span box-shadow"></span>
+                      <span class="gh_span box-shadow"></span>
+                      <i class="fa-brands fa-github text-shadow" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="all-1s">
+                    <a class="gmail" href="mailto:guillermobernal@gmail.com" type="" target="_blank">
+                      <span class="gm_span box-shadow"></span>
+                      <span class="gm_span box-shadow"></span>
+                      <span class="gm_span box-shadow"></span>
+                      <span class="gm_span box-shadow"></span>
+                      <i class="fa-solid fa-envelope text-shadow" aria-hidden="true"></i>
+                    </a>
+                  </li>
+            </ul>
+        </div>
+        <script src="socials.js"></script>
+        <div id="header-placeholder" class="placeholder absolute absolute-center"></div>
+    </header>
+    <main>
+        <section class="relative" id="about">
+            <div class="absolute placeholder" id="techs-checker2" style="top: 50%"></div>    
+            <div id="about-placeholder" class="placeholder absolute absolute-center"></div>
+            <h2 id="h2-about" class="sticky sticky-top text-center  hover-text-shadow all-1s">
+                Sobre mí
+            </h2>
+            <div class="about-wrapper fixed all-1s">
+                <h4 class="about-h4">¡Hola!</h4>
+                <p class="about-p">Soy un Desarrollador Web Junior con conocimientos en HTML, CSS, Javascript, PHP y MySQL 
+                    con especial interés en la parte de Front-End y Diseño Web. Intento hacer mis proyectos lo más bonitos, 
+                    originales e interactivos posibles. Te invito a seguir bajando para descrubir todo lo que sé y algunos de 
+                    mis proyectos <i class="fa-regular fa-face-smile"></i></p>
+            </div>
+            <div id="about-end"></div>
+        </section>  
+        <section></section>
+        <section class="relative" id="technologies">
+            <h2 id="h2-technologies" class="sticky sticky-top text-center  hover-text-shadow all-1s">
+                Tecnologías
+            </h2>
+            <div id="technologies-placeholder" class="placeholder absolute absolute-center"></div>
+            <div id="frontend" class="fixed all-1s opacity-0 default tech-wrapper floating-general">
+                <h3>Front-End</h3>
+                <ul>
+                    <li class="certificate-holder relative">
+                        <h4 class="inline select-anim">HTML5</h4>
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text left-100">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                            <li>
+                                <a class="pointer" href="https://skillshop.exceedlms.com/student/award/GXGdUu3ryUaVZowuvpkWUddj" target="_blank"><i class="fa-solid fa-certificate"></i>Introducción al Desarrollo Web - Google</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="certificate-holder relative">
+                        <h4 class="inline select-anim">CSS3</h4>
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text left-100">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                            <li>
+                                <a class="pointer" href="https://skillshop.exceedlms.com/student/award/GXGdUu3ryUaVZowuvpkWUddj" target="_blank"><i class="fa-solid fa-certificate"></i>Introducción al Desarrollo Web - Google</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="relative certificate-holder">
+                        <h4 class="inline select-anim">Javascript</h4>
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text left-100">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                            <li>
+                                <a class="pointer" href="https://openwebinars.net/cert/HGWJ" target="_blank"><i class="fa-solid fa-certificate"></i>Certificado Nivel Avanzado - OpenWebinars</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="certificate-holder"><h4 class="select-anim">React</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Three.js</h4></li>
+                    <li class="relative certificate-holder">
+                        <h4 class="inline select-anim">Bootstrap</h4>
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text left-100">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                            <li>
+                                <a class="pointer" href="https://skillshop.exceedlms.com/student/award/GXGdUu3ryUaVZowuvpkWUddj" target="_blank"><i class="fa-solid fa-certificate"></i>Introducción al Desarrollo Web - Google</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="certificate-holder"><h4 class="select-anim">Tailwind</h4></li>
+                  </ul>
+            </div>
+            <div id="backend" class="fixed all-1s opacity-0 default text-right floating-general tech-wrapper">
+                <h3>Back-End</h3>
+                <ul>
+                    <li class="certificate-holder">
+                        <h4 class="select-anim-inversa">Node.js</h4>
+                    </li>
+                    <li class="certificate-holder">
+                        <h4 class="select-anim-inversa">Express</h4>
+                    </li>
+                    <li class="certificate-holder">
+                        <h4 class="select-anim-inversa">C++</h4>
+                    </li>
+                    <li class="relative certificate-holder">
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <h4 class="inline select-anim-inversa">MySQL</h4>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text right-100 text-left">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="relative certificate-holder">
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <h4 class="inline select-anim-inversa">PHP</h4>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text right-100 text-left">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Desarrollo de Aplicaciones con Tecnologías Web - Eurofor</a>
+                            </li>
+                            <li>
+                                <a class="pointer" href="https://openwebinars.net/cert/jhCm" target="_blank"><i class="fa-solid fa-certificate"></i>Certificado Nivel Avanzado - OpenWebinars</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="ui" class="fixed all-1s opacity-0 default text-center floating-center tech-wrapper">
+                <h3>
+                    UI/UX
+                </h3>
+                <ul>
+                    <li class="certificate-holder"><h4 class="select-anim">Figma</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Photoshop</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Canva</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">GIMP</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Blender</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Inkscape</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Illustrator</h4></li>
+                    <li class="certificate-holder"><h4 class="select-anim">Lightroom</h4></li>
+                </ul>
+            </div>
+            <div id="technologies-end" class="absolute placeholder" style="top: 70%"></div>
+            <!-- afecta en algo -->
+        </section>   
+        <section></section>
+        <section class="relative" id="projects">   
+            <div class="absolute placeholder" id="techs-checker"></div>         
+            <h2 id="h2-projects" class="sticky sticky-top text-center hover-text-shadow all-1s">
+                Proyectos
+            </h2>
+            <div id="projects-placeholder" class="placeholder absolute absolute-center"></div>
+            <div class="" id="projects-wrapper">
+                <div id="project-1" class="project-top relative opacity-0 all-1s project-wrapper project-fake-scale default center-Y-absolute fixed display-none">
+                    <h3 class="overflow-hidden"><span class="project-h3-arrow">></span>Discord</h3>
+                    <ul class="flex project-techs all-0-5s absolute sticky">
+                        <li class="relative">
+                            <button class="grey-underline grey-text button-unset">PHP</button>
+                        </li>
+                        <li class="relative">
+                            <button class="grey-underline grey-text button-unset">MySql</button>
+                        </li>
+                        <li class="relative">
+                            <button class="grey-underline grey-text button-unset">CSS</button>
+                        </li>
+                        <li class="relative">
+                            <button class="grey-underline grey-text button-unset">AJAX</button>
+                        </li>
+                    </ul>
+                    <div class="project-description all-0-3s">
+                        <input type="checkbox" id="ch" class="ch">
+                        <p>A modo de práctica intenté replicar la plataforma Discord usando PHP y MySQL...</p>
+                        <div class="project-content">
+                            <p>Implementé un sistema de registro e inicio de sesión, solicitudes de amistad, creación de servidores y chat en vivo con encriptación</p>
+                            <p>Próximamente quiero volver a este proyecto hasta implementar todas las características de Disord menos el chat por voz.</p>
+                            <p>Lo que más me gustó del desarollo fue diseñar una "plantilla de servidor" y aprender como mediante PHP modificar copias de esa plantilla para crear nuevos serividores según las especificaciones del usuario.</p>
+                            <p>También fue mi primera vez usando AJAX.</p>  
+                            <label for="ch" class="read-more-label pointer">Mostrar menos</label>                          
+                        </div>
+                        <label for="ch" class="read-more-label pointer">Leer más</label>
+                    </div>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img1-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/discord/login.gif" alt="Gif inicio sesión discord" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Login and home screen</figcaption>
+                    </figure>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img2-figure grab">
+                        <img class="projects-img2 projects-img floating-general" src="img/discord/chat.gif" alt="Gif uso del chat" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Live chat feature</figcaption>
+                    </figure>
+                </div>
+                <div id="projects-placeholder-2" class="placeholder absolute absolute-center"></div>
+                <div id="project-2" class="project-top fixed opacity-0 all-1s project-wrapper relative project-fake-scale default center-Y-absolute display-none">
+                    <h3 class="relative overflow-hidden"><span class="project-h3-arrow">></span>Página Arcade</h3>
+                    <ul class="flex project-techs all-0-5s absolute project-techs-right">
+                        <li class="relative"><button class="grey-underline grey-text button-unset">HTML</button></li>
+                        <li class="relative"><button class="grey-underline grey-text button-unset">Javascript</button></li>
+                        <li class="relative"><button class="grey-underline grey-text button-unset">Node.js</button></li>
+                        <li class="relative"><button class="grey-underline grey-text button-unset">Express</button></li>
+                    </ul>
+                    <div class="project-description all-0-3s">
+                        <input type="checkbox" id="ch2" class="ch">
+                        <p>Mi proyecto más ambicioso hasta la fecha ha sido la creación una página web para una empresa de máquinas arcade...</p>
+                        <div class="project-content">
+                            <p>Por toda la página escondí lugares donde cuando el usuario interactuaba con ellos conseguía una moneda se añadía a un marcador global usando Node.js y WebSockets.</p>
+                            <p>Repliqué el juego "Pacman" usando la etiqueta canvas. También implementé un ranking con WebSockets</p>
+                            <p>Toda la página tiene temática de juegos retro y practicamente todo es interactuable. Mi parte favorita es una sección con información de la empresa incrustada en planetas. Cuando el usuario hace click en uno de ellos una nave dispara que hace volar el planeta en mil pedazos</p>
+                            <p>También creé diseños propios para la sección de precios, usando marquesinas icónicas de arcades con Photoshop.</p>  
+                            <label for="ch2" class="read-more-label pointer">Mostrar menos</label>                          
+                        </div>
+                        <label for="ch2" class="read-more-label pointer">Leer más</label>
+                    </div>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img3-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/arcade/pacman.gif" alt="Búsqueda de artista" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Search albums by artist</figcaption>
+                    </figure>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img4-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/arcade/nave.gif" alt="Búsqueda de artista 2" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Artist prediction</figcaption>
+                    </figure>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img5-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/arcade/index.gif" alt="Búsqueda de artista 2" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Artist prediction</figcaption>
+                    </figure>
+                </div>
+                
+                <div id="projects-placeholder-3" class="placeholder absolute absolute-center"></div>
+                <div id="project-3" class="project-top fixed opacity-0 all-1s project-wrapper relative project-fake-scale default  center-Y-absolute display-none">
+                    <h3 class="overflow-hidden "><span class="project-h3-arrow">></span>Spotify API</h3>
+                    <ul class="flex project-techs all-0-5s absolute">
+                        <li class="relative"><button class="grey-underline grey-text button-unset">React</button></li>
+                        <li class="relative"><button class="grey-underline grey-text button-unset">APIs</button></li>
+                        <li class="relative"><button class="grey-underline grey-text button-unset">Three.js</button></li>
+                    </ul> 
+                    <div class="project-description all-0-3s">
+                        <input type="checkbox" id="ch3" class="ch">
+                        <p>Por último, algunos proyectos de menor envergadura usando React que también me ayudaron a crecer como desarollador...</p>
+                        <div class="project-content">
+                            <p>Mi primera web con React fue un buscador de artistas que implementaba la API de Spotify.</p>
+                            <p>Me ayudó a entender la programación asíncrona, sobre fetch y sobre enviar solicitudes a APIs en general.</p>
+                            <p>También cree un pequeño "minijuego" para practicar puntería que imitaba un juego de tipo shooter usando Three.js</p>
+                            <p>Me ayudó a entender los principios de Three.js y sobre implementar elementos 3D a una pagina web. Además aprendí cosas relacionadas con los videojuegos como los raycasters</p>  
+                            <label for="ch3" class="read-more-label pointer">Mostrar menos</label>                          
+                        </div>
+                        <label for="ch3" class="read-more-label pointer">Leer más</label>
+                    </div>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img6-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/spotify/search1.gif" alt="Búsqueda de artista" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Search albums by artist</figcaption>
+                        <img src="" alt="">
+                    </figure>
+                    <figure class="absolute all-0-3s img-hover-zoom projects-img7-figure grab">
+                        <img class="projects-img1 projects-img floating-general" src="img/spotify/search2.gif" alt="Búsqueda de artista 2" draggable="false">
+                        <figcaption class="all-0-3s absolute text-center">Artist prediction</figcaption>
+                        <img src="/img/Spotify/codigoprueba.png" alt="" class="absolte" id="react-code">                            
+                    </figure>
+                </div>
+                <div id="projects-end" class="placeholder absolute" style="top:10%"></div>
+                <script src="imgdrag.js"></script>
+                <script src="techhandler.js"></script>
+            </div>
+        </section>  
+        <div class="scrolldown all-0-5s" style="--color: skyblue">
+            <div class="chevrons">
+                <div class="chevrondown"></div>
+                <div class="chevrondown"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
