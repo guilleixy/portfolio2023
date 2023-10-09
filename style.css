@@ -185,6 +185,20 @@ a{
 
 /* estilos de elementos concretos */
 
+#nav-buttons-wrapper{
+    right: 10px;
+    font-size: 3rem;
+    z-index: 999999;
+}
+
+#nav-buttons-wrapper > button{
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+
 #frontend{
     top: 30%;
     left: -15%;
@@ -236,6 +250,18 @@ a{
 
 #projects{
     height: calc(var(--altura-section)* 3) !important;
+}
+
+#project-1-placeholder{
+    top: 10%;
+}
+
+#project-2-placeholder{
+    top: 55%;
+}
+
+#project-3-placeholder{
+    top: 68%;
 }
 
 .project-top{
@@ -918,7 +944,7 @@ a{
 }
 
 @media(max-width: 710px){
-    header > ul {
+    nav > ul {
         right: -45px !important;
         top: -60px !important;
         white-space: nowrap;

@@ -140,11 +140,17 @@
             <script src="texteffect.js"></script>
             <h2 class="all-1s"><span id="flechita">></span><span id="programador-web">Desarrollador Web</span><span id="barrita">_</span></h2>
         </div>
-        <ul class="fixed flex right-0 all-0-5s" id="menu">
-            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#about-end">sobre mí</a></li>
-            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#technologies-end">tecnologías</a></li>
-            <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#projects-end">proyectos</a></li>
-        </ul>
+        <nav>
+            <ul class="fixed flex right-0 all-0-5s" id="menu">
+                <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#about-end">sobre mí</a></li>
+                <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#technologies-end">tecnologías</a></li>
+                <li class="padding-1 hover-text-shadow all-0-5s gray-to-white-text"><a href="#projects-end">proyectos</a></li>
+            </ul>            
+        </nav>
+        <div id="nav-buttons-wrapper" class="fixed center-Y-absolute flex flex-column">
+            <button onclick="goUp()" class="pointer gray-to-white-text all-0-5s"><i class="fa-regular fa-square-caret-up"></i></button>
+            <button onclick="goDown()" class="pointer gray-to-white-text all-0-5s"><i class="fa-regular fa-square-caret-down"></i></button>
+        </div>
         <div class="socials fixed flex align-center justify-center all-0-5s" id="socials">
             <ul id="social_ul" class="social_ul">
                   <li class="all-1s">
@@ -258,7 +264,7 @@
                   </ul>
             </div>
             <div id="backend" class="fixed all-1s opacity-0 default text-right floating-general tech-wrapper">
-                <h3>Back-End</h3>
+                <h3>Back-End+</h3>
                 <ul>
                     <li class="certificate-holder">
                         <h4 class="select-anim-inversa">Node.js</h4>
@@ -268,6 +274,12 @@
                     </li>
                     <li class="certificate-holder">
                         <h4 class="select-anim-inversa">C++</h4>
+                    </li>
+                    <li class="certificate-holder">
+                        <h4 class="select-anim-inversa">Java</h4>
+                    </li>
+                    <li class="certificate-holder">
+                        <h4 class="select-anim-inversa">Python</h4>
                     </li>
                     <li class="relative certificate-holder">
                         <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
@@ -287,6 +299,15 @@
                             </li>
                             <li>
                                 <a class="pointer" href="https://openwebinars.net/cert/jhCm" target="_blank"><i class="fa-solid fa-certificate"></i>Certificado Nivel Avanzado - OpenWebinars</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="relative certificate-holder">
+                        <i class="fa-solid fa-graduation-cap certificate-icon all-0-3s"></i>
+                        <h4 class="inline select-anim-inversa">Kotlin</h4>
+                        <ul class="absolute certificate-wrapper all-0-3s certificate-text right-100 text-left">
+                            <li>
+                                <a><i class="fa-solid fa-certificate"></i>Curso de Kotlin - OpenWebinars</a>
                             </li>
                         </ul>
                     </li>
@@ -313,12 +334,16 @@
         <section></section>
         <section class="relative" id="projects">   
             <div class="absolute placeholder" id="techs-checker"></div>         
+            <div id="project-1-placeholder" class="absolute placeholder"></div>
+            <div id="project-2-placeholder" class="absolute placeholder"></div>
+            <div id="project-3-placeholder" class="absolute placeholder"></div>
             <h2 id="h2-projects" class="sticky sticky-top text-center hover-text-shadow all-1s">
                 Proyectos
             </h2>
             <div id="projects-placeholder" class="placeholder absolute absolute-center"></div>
             <div class="" id="projects-wrapper">
                 <div id="project-1" class="project-top relative opacity-0 all-1s project-wrapper project-fake-scale default center-Y-absolute fixed display-none">
+
                     <h3 class="overflow-hidden"><span class="project-h3-arrow">></span>Discord</h3>
                     <ul class="flex project-techs all-0-5s absolute sticky">
                         <li class="relative">
@@ -357,6 +382,7 @@
                 </div>
                 <div id="projects-placeholder-2" class="placeholder absolute absolute-center"></div>
                 <div id="project-2" class="project-top fixed opacity-0 all-1s project-wrapper relative project-fake-scale default center-Y-absolute display-none">
+
                     <h3 class="relative overflow-hidden"><span class="project-h3-arrow">></span>Página Arcade</h3>
                     <ul class="flex project-techs all-0-5s absolute project-techs-right">
                         <li class="relative"><button class="grey-underline grey-text button-unset">HTML</button></li>
@@ -393,6 +419,7 @@
                 <div id="projects-placeholder-3" class="placeholder absolute absolute-center"></div>
                 <div id="project-3" class="project-top fixed opacity-0 all-1s project-wrapper relative project-fake-scale default  center-Y-absolute display-none">
                     <h3 class="overflow-hidden "><span class="project-h3-arrow">></span>Spotify API</h3>
+
                     <ul class="flex project-techs all-0-5s absolute">
                         <li class="relative"><button class="grey-underline grey-text button-unset">React</button></li>
                         <li class="relative"><button class="grey-underline grey-text button-unset">APIs</button></li>

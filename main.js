@@ -1,5 +1,47 @@
 //https://bashooka.com/coding/30-css-animated-gradient-examples/
 //https://codepen.io/ray7551/pen/EbVmZd
+
+
+const lugares = [
+  "header-wrapper",
+  "about-end",
+  "technologies-end",
+  "project-1-placeholder",
+  "project-2-placeholder",
+  "project-3-placeholder"
+]
+
+let i = 0;
+
+function goDown(){
+  console.log("hola");
+  if (i < lugares.length) {
+
+    const element = document.getElementById(lugares[i]);
+    if (element) {
+      console.log("Scrolling to " + element.id);
+      element.scrollIntoView({ behavior: "smooth" });
+      i++;
+    }
+  }
+}
+
+function goUp(){
+  if (i > 0) {
+
+    const element = document.getElementById(lugares[i]);
+    if (element) {
+      console.log("Scrolling to " + element.id);
+      element.scrollIntoView({ behavior: "smooth" });
+      i--;
+    }
+    if(i == 0){
+      console.log("yendo arriba");
+      window.scrollTo({ top: 0});
+    }
+  }
+} 
+
 document.addEventListener("DOMContentLoaded", function(){
 
     //<a> para ir a inicio
