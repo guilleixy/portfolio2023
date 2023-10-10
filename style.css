@@ -30,7 +30,7 @@ section{
 }
 
 h1{
-    font-size: 400%;
+    font-size: 4rem;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -417,7 +417,7 @@ a{
         }
 
         .scrolled-header > h1{
-            font-size: 200%;
+            font-size: 2rem;
         }
 
         .scrolled-header > h2{

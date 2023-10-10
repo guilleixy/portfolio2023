@@ -14,31 +14,25 @@ const lugares = [
 let i = 0;
 
 function goDown(){
-  console.log("hola");
   if (i < lugares.length) {
-
+    i++;
     const element = document.getElementById(lugares[i]);
     if (element) {
-      console.log("Scrolling to " + element.id);
       element.scrollIntoView({ behavior: "smooth" });
-      i++;
     }
   }
 }
 
 function goUp(){
   if (i > 0) {
-
+    i--;
     const element = document.getElementById(lugares[i]);
     if (element) {
-      console.log("Scrolling to " + element.id);
       element.scrollIntoView({ behavior: "smooth" });
-      i--;
     }
-    if(i == 0){
-      console.log("yendo arriba");
-      window.scrollTo({ top: 0});
-    }
+  }
+  if(i == 0){
+    window.scrollTo({ top: 0});
   }
 } 
 
@@ -101,7 +95,18 @@ var backendScene = new ScrollMagic.Scene({
        triggerHook: 0.1,
        reverse: true
      })
-     .setClassToggle("#ui", "ui-moved")
+     .on("enter", function(event){
+      document.getElementById("ui").classList.add("ui-moved");
+      i = 2;
+      console.log("i cambiado a 2");
+     })
+     .on("leave", function(event){
+      i = 2;
+      console.log("ui quitado");
+      document.getElementById("ui").classList.remove("ui-moved");
+     })
+
+    //  .setClassToggle("#ui", "ui-moved")
      .addTo(controller);
 
      var hideAllTechScene = new ScrollMagic.Scene({
@@ -176,6 +181,7 @@ var backendScene = new ScrollMagic.Scene({
       reverse: true
     })
     .on("enter", function(event){
+      i = 3;
       console.log("funciona");
       document.getElementById("project-1").classList.remove("display-none"); 
       setTimeout(()=>{
@@ -212,6 +218,7 @@ var backendScene = new ScrollMagic.Scene({
       },1000)
     })
     .on("leave", function(event){
+      i = 3
       console.log("adios");
       document.getElementById("project-1").classList.remove("display-none"); 
       setTimeout(()=>{
@@ -227,6 +234,7 @@ var backendScene = new ScrollMagic.Scene({
       reverse: true
     })
     .on("enter", function(event){
+      i = 4;
       console.log("funciona");
       document.getElementById("project-2").classList.remove("display-none"); 
       setTimeout(()=>{
@@ -257,6 +265,7 @@ var backendScene = new ScrollMagic.Scene({
       },1000)
     })
     .on("leave", function(event){
+      i = 4
       console.log("adios");
       document.getElementById("project-2").classList.remove("display-none"); 
       setTimeout(()=>{
@@ -272,6 +281,7 @@ var backendScene = new ScrollMagic.Scene({
       reverse: true
     })
     .on("enter", function(event){
+      i = 5;
       console.log("funciona");
       document.getElementById("project-3").classList.remove("display-none"); 
       setTimeout(()=>{
@@ -376,9 +386,11 @@ var backendScene = new ScrollMagic.Scene({
     })
     .on("enter", function(event){
       document.querySelector('.about-wrapper').classList.add("about-on");
+      i = 1;
     })
     .on("leave", function(event){
-      console.log("hola");
+      i = 0;
+      console.log("holaje");
       document.querySelector('.about-wrapper').classList.remove("about-on");
     })
     .addTo(controller);
@@ -392,7 +404,8 @@ var backendScene = new ScrollMagic.Scene({
       document.querySelector("#socials").classList.remove("socials-zoom");
     })
     .on("leave", function(event){
-      console.log("hola");
+      i = 1;
+      console.log("holaji");
       document.querySelector('.about-wrapper').classList.add("about-on");
       document.querySelector("#socials").classList.add("socials-zoom");
     })
