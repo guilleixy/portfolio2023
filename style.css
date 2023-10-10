@@ -36,7 +36,7 @@ h1{
 }
 
 h2{
-    font-size: 200%;
+    font-size: 2rem;
 }
 
 h3{
@@ -692,7 +692,7 @@ a{
     }
 
     .about-on{
-        top: 200px !important;
+        top: 35% !important;
         opacity: 1;
     }
 
@@ -944,6 +944,21 @@ a{
 }
 
 @media(max-width: 710px){
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .scrolled-header{
+        left: 135px;
+    }
+    .scrolled-header > h1{
+        font-size: 1.5rem;
+    }
+    .scrolled-header > h2{
+        font-size: 1rem;
+    }
     nav > ul {
         right: -45px !important;
         top: -60px !important;
@@ -953,7 +968,7 @@ a{
     .moved-menu-phone{
         left: 50% !important;
         transform: translateX(-50%) !important;
-        top: 100px !important;
+        top: 80px !important;
     }
     section{
         height: calc(var(--altura-section) + 50px);
