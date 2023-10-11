@@ -946,7 +946,7 @@ a{
 
 @media(max-width: 710px){
     h1{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     h2{
         font-size: 1rem;
@@ -961,14 +961,12 @@ a{
         font-size: 1rem;
     }
     nav > ul {
-        right: -45px !important;
-        top: -60px !important;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
     .moved-menu-phone{
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        right: 50% !important;
+        transform: translateX(50%) !important;
         top: 80px !important;
         font-size: 0.8rem;
     }
@@ -979,7 +977,7 @@ a{
         top: 55% !important;
     }
     .socials{
-        top: 90vh !important;
+        top: calc(95dvh - 30px) !important;
         left: -70vw;
     }
     .about-wrapper{
@@ -988,13 +986,20 @@ a{
         top: 28% !important;
     }
     .socials-zoom{
-        top: 85% !important;
-        transform: translateX(-50%) scale(130%) !important;
+        top: 80% !important;
+        right: 50% !important;
+        transform: translateX(50%) scale(130%) !important;
     }
     main{
         font-size: 70%;
     }
     #nav-buttons-wrapper{
         font-size: 1.3rem;
+        
+    }
+    .certificate-holder:hover .certificate-wrapper{
+        width: 0 !important;
+        opacity: 0 !important;
+        z-index: -1;
     }
 }
