@@ -475,14 +475,15 @@ a{
         content: "";
         position: absolute;
         width: 0;
-        height: 3px;
+        height: 2px;
         bottom: -3px;
         left: -1px;
         /* background-color: var(--grey-text); */
         background: rgb(0,0,0);
-        background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(236,236,236,1) 100%);
-        transition: width 0.2s ease-in-out;
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(236,236,236,1) 100%);
+        transition: width 0.1s ease-out;
         border-radius: 2px;
+        filter: blur(2.5px);
     }
 
     .grey-underline:hover::before{
@@ -707,6 +708,25 @@ a{
         display: inline-block;
     }
 
+    .read-more-underline::before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        top: 25px;
+        /* background-color: var(--grey-text); */
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
+        transition: width 0.15s ease-out;
+        border-radius: 2px;
+        filter: blur(1.5px);
+    }
+
+
+    .read-more-underline:hover::before{
+        width: 100%;
+    }
+
     .project-content{
         display: none;
     }
@@ -720,7 +740,7 @@ a{
     }
 
     /* estilos de liquid gradients */
-
+/* 
     .background-liquid{
         background-image: url(img/liquid.gif);
         background-size: cover;
@@ -744,10 +764,10 @@ a{
     }
 
     .background-liquid-hover:hover{
-        transition-delay: 1s; /* Retraso de 1 segundo antes de que comience la transición */
+        transition-delay: 1s;  Retraso de 1 segundo antes de que comience la transición 
         color: black;
         transition: all 1s;
-    }
+    } */
     
     @keyframes luz-brillo{
         0%{
@@ -764,12 +784,12 @@ a{
 /* animaciones */
 
 #flechita{
-    animation: flechita-perma 0.7s infinite;
+    animation: flechita-perma 1s infinite;
     position: absolute;
 }
 
 #barrita{
-    animation: barrita-perma 0.65s infinite;
+    animation: barrita-perma 1s infinite;
 }
 
 #programador-web{
@@ -819,7 +839,7 @@ a{
 }
 
 @keyframes barrita-perma {
-    0% {
+    /* 0% {
         opacity: 1;
     }
     0.001%{
@@ -830,7 +850,10 @@ a{
     }
     100% {
         opacity: 0;
-    }
+    } */
+    0%,40% { color: #000000; }
+    50%,60% { color: white(); }
+
 }
 
 @keyframes spin-1{
@@ -994,7 +1017,7 @@ a{
         font-size: 70%;
     }
     #nav-buttons-wrapper{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         
     }
     .certificate-holder:hover .certificate-wrapper{
